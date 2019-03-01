@@ -46,12 +46,19 @@ async function register(req, res) {
 // @Access   Public
 async function login(req, res) {
   let { username, password } = req.body;
+  if (!username) {
+    return res.status(400).json({ username: "Username field is required" });
+  }
+  if (!password) {
+    return res.status(400).json({ password: "Password field is required" });
+  }
   try {
     const user = await db
       .select()
       .from("users")
       .where({ username: username })
       .first();
+
     const isMatch = await bcrypt.compare(password, user.password);
     //save user in cookies
     if (isMatch) {

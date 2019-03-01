@@ -4,30 +4,29 @@ import axios from "axios";
 class Login extends React.Component {
   state = {
     username: "",
-    password: ""
+    password: "",
+    errors: {}
   };
 
-  handleInputChange = event => {
-    const { name, value } = event.target;
-
-    this.setState({ [name]: value });
+  handleInputChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
   };
 
   handleSubmit = event => {
     event.preventDefault();
-
-    const endpoint = "/api/login";
-
     axios
-      .post(endpoint, this.state)
+      .post("/api/login", this.state)
       .then(res => {
         localStorage.setItem("jwt", res.data.token);
-        this.props.history.push("/users");
+        this.props.history.push("/dashboard");
       })
-      .catch(error => console.error(error));
+      .catch(err => this.setState({ errors: err.response.data }));
   };
 
   render() {
+    const { errors } = this.state;
     return (
       <>
         <h2>Login</h2>
@@ -42,6 +41,9 @@ class Login extends React.Component {
               type="text"
             />
           </div>
+          <span style={{ color: "red", fontSize: 10 }}>
+            {errors && errors.username}
+          </span>
           <div>
             <label htmlFor="password" />
             <input
@@ -52,10 +54,15 @@ class Login extends React.Component {
               type="password"
             />
           </div>
-
+          <span style={{ color: "red", fontSize: 10 }}>
+            {errors && errors.password}
+          </span>
           <div>
             <button type="submit">Login</button>
           </div>
+          <span style={{ color: "red", fontSize: 10 }}>
+            {errors && errors.message}
+          </span>
         </form>
       </>
     );
