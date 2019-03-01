@@ -64,7 +64,7 @@ Helpful Tip on Testing this Project:
 
 **Note** The migrations and a database with empty users is already included
 
-- [ ] Add the authentication related code. If every is done correctly, visiting `/api/jokes` should return a list of jokes.
+- [x] Add the authentication related code. If every is done correctly, visiting `/api/jokes` should return a list of jokes.
 
 ## Stretch Problem: Build a front end to interface with your User Auth System
 
