@@ -46,7 +46,6 @@ async function register(req, res) {
 // @Access   Public
 async function login(req, res) {
   let { username, password } = req.body;
-
   try {
     const user = await db
       .select()
