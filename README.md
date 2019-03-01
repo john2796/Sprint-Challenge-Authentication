@@ -33,7 +33,7 @@ Demonstrate your understanding of this week's concepts by answering the followin
 1. What does bcrypt do to slow down attackers?
 1. What are the three parts of the JSON Web Token?
 
-## Project Set Up
+## **Project Set Up**
 
 Follow these steps to set up and work on your project:
 
@@ -58,8 +58,8 @@ Helpful Tip on Testing this Project:
 
 ## Minimum Viable Product
 
-- [x] Implement the `register` function inside `/config/routes.js`.
-- [x] Implement the `login` function inside `/config/routes.js`.
+- [x]
+- [x] Implement the `login` Implement the `register` function inside `/config/routes.js`.function inside `/config/routes.js`.
 - [x] Use JSON Web Tokens for authentication.
 
 **Note** The migrations and a database with empty users is already included
