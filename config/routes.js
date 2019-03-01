@@ -13,7 +13,9 @@ module.exports = server => {
   server.post("/api/login", login);
   server.get("/api/jokes", authenticate, getJokes);
 };
-
+// @route    GET api/register
+// @desc     regsiter
+// @Access   Public
 async function register(req, res) {
   // implement user registration
   let user = req.body;
@@ -39,7 +41,9 @@ async function register(req, res) {
     res.status(500).json({ message: `internal server err ${err}` });
   }
 }
-
+// @route    GET api/login
+// @desc     login
+// @Access   Public
 async function login(req, res) {
   let { username, password } = req.body;
 
@@ -76,7 +80,9 @@ async function login(req, res) {
     res.status(500).json({ message: `internal err server ${err}` });
   }
 }
-
+// @route    GET api/jokes
+// @desc     get all jokes
+// @Access   Private
 function getJokes(req, res) {
   const requestOptions = {
     headers: { accept: "application/json" }
