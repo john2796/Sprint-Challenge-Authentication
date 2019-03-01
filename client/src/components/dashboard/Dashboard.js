@@ -14,7 +14,6 @@ class Dashboard extends Component {
   fetchJokes = async () => {
     try {
       const jokes = await axios.get("/api/jokes");
-
       this.setState({
         jokes: jokes.data
       });
@@ -24,15 +23,13 @@ class Dashboard extends Component {
   };
   render() {
     const { jokes } = this.state;
-    console.log("jokes", jokes);
-
     return (
       <div className="jokes-card">
         <h1>Dizz Jokes 🤣</h1>
         {jokes.map((j, idx) => (
           <p key={j.id}>
             {" "}
-            <strong>joke #{idx} </strong>
+            <strong>joke #{idx + 1} </strong>
             <br /> {j.joke}
           </p>
         ))}
