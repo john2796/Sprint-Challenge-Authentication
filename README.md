@@ -64,9 +64,9 @@ Helpful Tip on Testing this Project:
 
 **Note** The migrations and a database with empty users is already included
 
-- [x] Add the authentication related code. If every is done correctly, visiting `/api/jokes` should return a list of jokes.
+- [**x**] Add the authentication related code. If every is done correctly, visiting `/api/jokes` should return a list of jokes.
 
 ## Stretch Problem: Build a front end to interface with your User Auth System
 
-- Add a React client that connects to your API and has pages for `Sign Up`, `Sign In` and showing a list of `Jokes`.
-- Once you have the functionality down, style it!
+- [x] Add a React client that connects to your API and has pages for `Sign Up`, `Sign In` and showing a list of `Jokes`.
+- [x] Once you have the functionality down, style it!
